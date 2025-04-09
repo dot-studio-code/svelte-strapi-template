@@ -7,14 +7,13 @@ export type PagesQueryVariables = Types.Exact<{ [key: string]: never }>;
 
 export type PagesQuery = {
 	__typename?: 'Query';
-	pages: Array<{ __typename?: 'Page'; slug?: string | null; locale?: string | null } | null>;
+	pages: Array<{ __typename?: 'Page'; slug?: string | null } | null>;
 };
 
 export const PagesDocument = gql`
 	query Pages {
 		pages {
 			slug
-			locale
 		}
 	}
 `;

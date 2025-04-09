@@ -1,6 +1,5 @@
 query Pages {
   pages {
     slug
-    locale
   }
 }

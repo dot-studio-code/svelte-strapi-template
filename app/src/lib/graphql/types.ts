@@ -374,7 +374,6 @@ export type MutationChangePasswordArgs = {
 
 export type MutationCreatePageArgs = {
 	data: PageInput;
-	locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
 	status?: InputMaybe<PublicationStatus>;
 };
 
@@ -402,7 +401,6 @@ export type MutationDeleteFooterMenuArgs = {
 
 export type MutationDeletePageArgs = {
 	documentId: Scalars['ID']['input'];
-	locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
 };
 
 export type MutationDeleteReviewWorkflowsWorkflowArgs = {
@@ -464,7 +462,6 @@ export type MutationUpdateFooterMenuArgs = {
 export type MutationUpdatePageArgs = {
 	data: PageInput;
 	documentId: Scalars['ID']['input'];
-	locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
 	status?: InputMaybe<PublicationStatus>;
 };
 
@@ -512,24 +509,9 @@ export type Page = {
 	contentBlocks?: Maybe<Array<Maybe<PageContentBlocksDynamicZone>>>;
 	createdAt?: Maybe<Scalars['DateTime']['output']>;
 	documentId: Scalars['ID']['output'];
-	locale?: Maybe<Scalars['String']['output']>;
-	localizations: Array<Maybe<Page>>;
-	localizations_connection?: Maybe<PageRelationResponseCollection>;
 	publishedAt?: Maybe<Scalars['DateTime']['output']>;
 	slug?: Maybe<Scalars['String']['output']>;
 	updatedAt?: Maybe<Scalars['DateTime']['output']>;
-};
-
-export type PageLocalizationsArgs = {
-	filters?: InputMaybe<PageFiltersInput>;
-	pagination?: InputMaybe<PaginationArg>;
-	sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type PageLocalizations_ConnectionArgs = {
-	filters?: InputMaybe<PageFiltersInput>;
-	pagination?: InputMaybe<PaginationArg>;
-	sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type PageContentBlocksDynamicZone =
@@ -548,8 +530,6 @@ export type PageFiltersInput = {
 	and?: InputMaybe<Array<InputMaybe<PageFiltersInput>>>;
 	createdAt?: InputMaybe<DateTimeFilterInput>;
 	documentId?: InputMaybe<IdFilterInput>;
-	locale?: InputMaybe<StringFilterInput>;
-	localizations?: InputMaybe<PageFiltersInput>;
 	not?: InputMaybe<PageFiltersInput>;
 	or?: InputMaybe<Array<InputMaybe<PageFiltersInput>>>;
 	publishedAt?: InputMaybe<DateTimeFilterInput>;
@@ -561,11 +541,6 @@ export type PageInput = {
 	contentBlocks?: InputMaybe<Array<Scalars['PageContentBlocksDynamicZoneInput']['input']>>;
 	publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
 	slug?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type PageRelationResponseCollection = {
-	__typename?: 'PageRelationResponseCollection';
-	nodes: Array<Page>;
 };
 
 export type Pagination = {
@@ -643,13 +618,11 @@ export type QueryI18NLocales_ConnectionArgs = {
 
 export type QueryPageArgs = {
 	documentId: Scalars['ID']['input'];
-	locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
 	status?: InputMaybe<PublicationStatus>;
 };
 
 export type QueryPagesArgs = {
 	filters?: InputMaybe<PageFiltersInput>;
-	locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
 	pagination?: InputMaybe<PaginationArg>;
 	sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 	status?: InputMaybe<PublicationStatus>;
@@ -657,7 +630,6 @@ export type QueryPagesArgs = {
 
 export type QueryPages_ConnectionArgs = {
 	filters?: InputMaybe<PageFiltersInput>;
-	locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
 	pagination?: InputMaybe<PaginationArg>;
 	sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 	status?: InputMaybe<PublicationStatus>;

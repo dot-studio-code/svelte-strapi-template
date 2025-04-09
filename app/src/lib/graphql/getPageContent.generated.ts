@@ -5,7 +5,6 @@ import gql from 'graphql-tag';
 type GraphQLClientRequestHeaders = RequestOptions['requestHeaders'];
 export type PageBySlugQueryVariables = Types.Exact<{
 	slug: Types.Scalars['String']['input'];
-	locale: Types.Scalars['I18NLocaleCode']['input'];
 }>;
 
 export type PageBySlugQuery = {
@@ -68,8 +67,8 @@ export type PageBySlugQuery = {
 };
 
 export const PageBySlugDocument = gql`
-	query PageBySlug($slug: String!, $locale: I18NLocaleCode!) {
-		pages(filters: { slug: { eq: $slug } }, locale: $locale, pagination: { limit: 1 }) {
+	query PageBySlug($slug: String!) {
+		pages(filters: { slug: { eq: $slug } }, pagination: { limit: 1 }) {
 			contentBlocks {
 				... on ComponentContentBlocksHero {
 					__typename
