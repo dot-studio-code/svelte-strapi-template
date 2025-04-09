@@ -31,6 +31,8 @@
     --space-4: 1rem;
     /* 20px */
     --space-5: 1.25rem;
+    /* 28px */
+    --space-6: 1.75rem;
     /* 32px */
     --space-8: 2rem;
     /* 36px */
@@ -43,4 +45,10 @@
     --space-20: 5rem;
     /* 120px */
     --space-30: 7.5rem;
+    /* 160px */
+    --space-40: 10rem;
+    /* 200px */
+    --space-50: 12.5rem;
+
+
 }
