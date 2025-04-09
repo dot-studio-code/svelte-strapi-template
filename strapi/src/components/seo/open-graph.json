@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_seo_open_graph",
+  "info": {
+    "displayName": "Open Graph"
+  },
+  "options": {},
+  "attributes": {
+    "ogTitle": {
+      "type": "string",
+      "required": false
+    },
+    "ogDescription": {
+      "type": "text",
+      "required": false
+    },
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

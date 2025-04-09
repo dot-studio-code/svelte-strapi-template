@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_menus",
+  "info": {
+    "singularName": "footer-menu",
+    "pluralName": "footer-menus",
+    "displayName": "Footer Menu",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "menu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menus.menu",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

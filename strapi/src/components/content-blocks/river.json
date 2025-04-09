@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_content_blocks_rivers",
+  "info": {
+    "displayName": "river",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "imageLeft": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

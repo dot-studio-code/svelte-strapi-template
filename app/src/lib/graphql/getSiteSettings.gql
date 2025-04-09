@@ -1,0 +1,44 @@
+query SiteSettings {
+  siteSetting {
+    siteTitle
+    description
+    keywords
+    logo {
+      alternativeText
+      url
+    }
+    robotsMeta
+    author
+    favicon {
+      alternativeText
+      url
+      width
+      height
+    }
+    maintenanceMode
+    siteVersion
+    themeColor
+    siteTagline
+  }
+  topMenu {
+    menu {
+      icon {
+        alternativeText
+        url
+      }
+      label
+      url
+    }
+  }
+  footerMenu {
+    menu {
+      id
+      icon {
+        alternativeText
+        url
+      }
+      label
+      url
+    }
+  }
+}

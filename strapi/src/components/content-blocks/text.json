@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_content_blocks_texts",
+  "info": {
+    "displayName": "text",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_content_blocks_heroes",
+  "info": {
+    "displayName": "hero",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
