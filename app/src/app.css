@@ -1,1 +1,46 @@
-@import 'tailwindcss';
+:root {
+    font-size: 16px;
+
+    --color-black: #000;
+    --color-white: #fff;
+    --color-green-100: #4DB55E;
+    --color-green-50: #B4EFBB;
+    --color-yellow-100: #FFC145;
+    --color-yellow-50: #FFF0C0;
+    --color-red-100: #F94B38;
+    --color-red-50: #FFCCD9;
+    --color-blue-100: #60B4E2;
+    --color-blue-50: #B8E5F4;
+    --color-purple-100: #8E56BF;
+    --color-purple-50: #E1D0F4;
+    --color-orange-100: #FF9239;
+    --color-orange-50: #FFE4BD;
+
+    --font-firesans: 'Fire Sans Regular', sans-serif;
+    --font-grotesk: 'Clash Grotesk Semibold', sans-serif;
+
+    /* 0px */
+    --space-0: 0;
+    /* 4px */
+    --space-1: 0.25rem;
+    /* 8px */
+    --space-2: 0.5rem;
+    /* 12px */
+    --space-3: 0.75rem;
+    /* 16px */
+    --space-4: 1rem;
+    /* 20px */
+    --space-5: 1.25rem;
+    /* 32px */
+    --space-8: 2rem;
+    /* 36px */
+    --space-9: 2.25rem;
+    /* 40px */
+    --space-10: 2.5rem;
+    /* 60px */
+    --space-15: 3.75rem;
+    /* 80px */
+    --space-20: 5rem;
+    /* 120px */
+    --space-30: 7.5rem;
+}

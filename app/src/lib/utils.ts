@@ -1,8 +1,6 @@
 import type { UploadFile } from './graphql/types';
 
 import { PUBLIC_STRAPI_URL } from '$env/static/public';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
 
 export const generateSrcSet = (formats: NonNullable<UploadFile['formats']>): string => {
 	if (!formats || typeof formats !== 'object' || Object.keys(formats).length === 0) {
@@ -19,5 +17,3 @@ export const generateSrcSet = (formats: NonNullable<UploadFile['formats']>): str
 };
 
 export const prependCMS = (url: string): string => `${PUBLIC_STRAPI_URL}${url}`;
-
-export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
