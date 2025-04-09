@@ -15,14 +15,16 @@ export default ({ env }) => ({
     config: {
       provider: "aws-s3",
       providerOptions: {
-        credentials: {
-          accessKeyId: env("S3_ACCESS_KEY"),
-          secretAccessKey: env("S3_SECRET_KEY"),
-        },
-        region: env("S3_REGION"),
-        endpoint: env("S3_ENDPOINT"),
-        params: {
-          Bucket: env("S3_BUCKET_NAME"),
+        s3Options: {
+          credentials: {
+            accessKeyId: env("S3_ACCESS_KEY"),
+            secretAccessKey: env("S3_SECRET_KEY"),
+          },
+          region: env("S3_REGION"),
+          endpoint: env("S3_ENDPOINT"),
+          params: {
+            Bucket: env("S3_BUCKET_NAME"),
+          },
         },
       },
       breakpoints: [480, 1024, 1920],
