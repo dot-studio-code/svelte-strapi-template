@@ -29,7 +29,8 @@
     "SEO": {
       "type": "component",
       "repeatable": false,
-      "component": "seo.seo"
+      "component": "seo.seo",
+      "required": true
     }
   }
 }
