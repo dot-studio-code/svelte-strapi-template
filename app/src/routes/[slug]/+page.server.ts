@@ -1,7 +1,7 @@
 import {
 	PageBySlugDocument,
 	type PageBySlugQuery,
-	type PageBySlugQueryVariables
+	type PageBySlugQueryVariables,
 } from '$lib/graphql/getPageContent.generated';
 import { GraphQLClient } from 'graphql-request';
 import { GRAPHQL_ENDPOINT } from '$env/static/private';
@@ -21,7 +21,7 @@ export const load = async ({ params }) => {
 		slug,
 	});
 
-	return { data };
+	return data;
 };
 
 export const entries: EntryGenerator = async () => {
@@ -29,7 +29,7 @@ export const entries: EntryGenerator = async () => {
 
 	const validEntries = data.pages
 		.map((page) => (page?.slug ? { slug: page.slug } : null))
-		.filter((entry): entry is { slug: string; } => entry !== null);
+		.filter((entry): entry is { slug: string } => entry !== null);
 
 	return validEntries;
 };

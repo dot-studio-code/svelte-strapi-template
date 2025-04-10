@@ -1,9 +1,11 @@
 <script lang="ts">
-	import BlockSwitch from '$lib/ui/BlockSwitch.svelte';
+	import { page } from '$app/state';
+	import PageBlockSwitch from '$lib/ui/PageBlockSwitch.svelte';
 	import type { PageData } from './$types';
 	import { PUBLIC_BASE_URL } from '$env/static/public';
 
 	let { data }: { data: PageData } = $props();
+
 	const pageData = $derived(data.pages[0]);
 </script>
 
@@ -19,4 +21,4 @@
 	<meta property="og:image" content={pageData?.SEO.ogImage.url} />
 </svelte:head>
 
-<BlockSwitch page={pageData} />
+<PageBlockSwitch page={pageData} />
