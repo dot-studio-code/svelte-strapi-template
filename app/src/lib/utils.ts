@@ -1,10 +1,14 @@
 import type { UploadFile } from './graphql/types';
 
 import { PUBLIC_STRAPI_URL } from '$env/static/public';
+import { twMerge } from 'tailwind-merge';
+import { clsx, type ClassValue } from 'clsx';
 
 export const generateSrcSet = (formats: NonNullable<UploadFile['formats']>): string => {
 	if (!formats || typeof formats !== 'object' || Object.keys(formats).length === 0) {
-		console.warn('Image formats are missing. Make sure to query image formats in your GraphQL query, e.g.: image { url alternativeText formats } ');
+		console.warn(
+			'Image formats are missing. Make sure to query image formats in your GraphQL query, e.g.: image { url alternativeText formats } '
+		);
 		return '';
 	}
 
@@ -17,3 +21,5 @@ export const generateSrcSet = (formats: NonNullable<UploadFile['formats']>): str
 };
 
 export const prependCMS = (url: string): string => `${PUBLIC_STRAPI_URL}${url}`;
+
+export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
