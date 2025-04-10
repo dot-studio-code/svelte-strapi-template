@@ -67,6 +67,19 @@ export interface SeoOpenGraph extends Struct.ComponentSchema {
   };
 }
 
+export interface SeoSeo extends Struct.ComponentSchema {
+  collectionName: 'components_seo_seos';
+  info: {
+    displayName: 'SEO';
+    icon: 'apps';
+  };
+  attributes: {
+    ogImage: Schema.Attribute.Media<'images'>;
+    pageDescription: Schema.Attribute.Text;
+    pageTitle: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -75,6 +88,7 @@ declare module '@strapi/strapi' {
       'content-blocks.text': ContentBlocksText;
       'menus.menu': MenusMenu;
       'seo.open-graph': SeoOpenGraph;
+      'seo.seo': SeoSeo;
     }
   }
 }

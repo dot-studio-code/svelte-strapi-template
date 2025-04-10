@@ -25,6 +25,11 @@
         "content-blocks.river"
       ],
       "pluginOptions": {}
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_seo_seos",
+  "info": {
+    "displayName": "SEO",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "pageDescription": {
+      "type": "text"
+    },
+    "pageTitle": {
+      "type": "string",
+      "required": true
+    },
+    "ogImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
