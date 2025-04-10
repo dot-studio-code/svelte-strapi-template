@@ -3,6 +3,13 @@ query PageBySlug($slug: String!) {
   pages(filters: { slug: { eq: $slug } }, pagination: {
      limit: 1
   }) {
+    SEO {
+      pageTitle
+      pageDescription
+      ogImage {
+        url
+      }
+    }
     contentBlocks {
       ... on ComponentContentBlocksHero {
         __typename

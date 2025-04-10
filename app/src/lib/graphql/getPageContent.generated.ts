@@ -11,6 +11,12 @@ export type PageBySlugQuery = {
 	__typename?: 'Query';
 	pages: Array<{
 		__typename?: 'Page';
+		SEO?: {
+			__typename?: 'ComponentSeoSeo';
+			pageTitle: string;
+			pageDescription?: string | null;
+			ogImage?: { __typename?: 'UploadFile'; url: string } | null;
+		} | null;
 		contentBlocks?: Array<
 			| {
 					__typename: 'ComponentContentBlocksHero';
@@ -69,6 +75,13 @@ export type PageBySlugQuery = {
 export const PageBySlugDocument = gql`
 	query PageBySlug($slug: String!) {
 		pages(filters: { slug: { eq: $slug } }, pagination: { limit: 1 }) {
+			SEO {
+				pageTitle
+				pageDescription
+				ogImage {
+					url
+				}
+			}
 			contentBlocks {
 				... on ComponentContentBlocksHero {
 					__typename
@@ -150,13 +163,13 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
 				(wrappedRequestHeaders) =>
 					client.request<PageBySlugQuery>(PageBySlugDocument, variables, {
 						...requestHeaders,
-						...wrappedRequestHeaders
+						...wrappedRequestHeaders,
 					}),
 				'PageBySlug',
 				'query',
 				variables
 			);
-		}
+		},
 	};
 }
 export type Sdk = ReturnType<typeof getSdk>;

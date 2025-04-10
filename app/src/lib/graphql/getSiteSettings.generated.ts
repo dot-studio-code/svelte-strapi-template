@@ -115,13 +115,13 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
 				(wrappedRequestHeaders) =>
 					client.request<SiteSettingsQuery>(SiteSettingsDocument, variables, {
 						...requestHeaders,
-						...wrappedRequestHeaders
+						...wrappedRequestHeaders,
 					}),
 				'SiteSettings',
 				'query',
 				variables
 			);
-		}
+		},
 	};
 }
 export type Sdk = ReturnType<typeof getSdk>;

@@ -38,13 +38,13 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
 				(wrappedRequestHeaders) =>
 					client.request<PagesQuery>(PagesDocument, variables, {
 						...requestHeaders,
-						...wrappedRequestHeaders
+						...wrappedRequestHeaders,
 					}),
 				'Pages',
 				'query',
 				variables
 			);
-		}
+		},
 	};
 }
 export type Sdk = ReturnType<typeof getSdk>;

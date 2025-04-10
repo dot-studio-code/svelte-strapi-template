@@ -106,6 +106,29 @@ export type ComponentSeoOpenGraphInput = {
 	ogTitle?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type ComponentSeoSeo = {
+	__typename?: 'ComponentSeoSeo';
+	id: Scalars['ID']['output'];
+	ogImage?: Maybe<UploadFile>;
+	pageDescription?: Maybe<Scalars['String']['output']>;
+	pageTitle: Scalars['String']['output'];
+};
+
+export type ComponentSeoSeoFiltersInput = {
+	and?: InputMaybe<Array<InputMaybe<ComponentSeoSeoFiltersInput>>>;
+	not?: InputMaybe<ComponentSeoSeoFiltersInput>;
+	or?: InputMaybe<Array<InputMaybe<ComponentSeoSeoFiltersInput>>>;
+	pageDescription?: InputMaybe<StringFilterInput>;
+	pageTitle?: InputMaybe<StringFilterInput>;
+};
+
+export type ComponentSeoSeoInput = {
+	id?: InputMaybe<Scalars['ID']['input']>;
+	ogImage?: InputMaybe<Scalars['ID']['input']>;
+	pageDescription?: InputMaybe<Scalars['String']['input']>;
+	pageTitle?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type DateTimeFilterInput = {
 	and?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
 	between?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
@@ -207,6 +230,7 @@ export type GenericMorph =
 	| ComponentContentBlocksText
 	| ComponentMenusMenu
 	| ComponentSeoOpenGraph
+	| ComponentSeoSeo
 	| FooterMenu
 	| I18NLocale
 	| Page
@@ -506,6 +530,7 @@ export type MutationUpdateUsersPermissionsUserArgs = {
 
 export type Page = {
 	__typename?: 'Page';
+	SEO?: Maybe<ComponentSeoSeo>;
 	contentBlocks?: Maybe<Array<Maybe<PageContentBlocksDynamicZone>>>;
 	createdAt?: Maybe<Scalars['DateTime']['output']>;
 	documentId: Scalars['ID']['output'];
@@ -527,6 +552,7 @@ export type PageEntityResponseCollection = {
 };
 
 export type PageFiltersInput = {
+	SEO?: InputMaybe<ComponentSeoSeoFiltersInput>;
 	and?: InputMaybe<Array<InputMaybe<PageFiltersInput>>>;
 	createdAt?: InputMaybe<DateTimeFilterInput>;
 	documentId?: InputMaybe<IdFilterInput>;
@@ -538,6 +564,7 @@ export type PageFiltersInput = {
 };
 
 export type PageInput = {
+	SEO?: InputMaybe<ComponentSeoSeoInput>;
 	contentBlocks?: InputMaybe<Array<Scalars['PageContentBlocksDynamicZoneInput']['input']>>;
 	publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
 	slug?: InputMaybe<Scalars['String']['input']>;
@@ -560,7 +587,7 @@ export type PaginationArg = {
 
 export enum PublicationStatus {
 	Draft = 'DRAFT',
-	Published = 'PUBLISHED'
+	Published = 'PUBLISHED',
 }
 
 export type Query = {
