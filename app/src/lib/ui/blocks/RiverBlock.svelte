@@ -12,7 +12,7 @@
 	>;
 
 	let {
-		block
+		block,
 	}: {
 		block: ComponentContentBlocksText;
 	} = $props();
@@ -22,6 +22,7 @@
 	<div class={cn('grid grid-cols-6 gap-2 bg-yellow-500 p-5')}>
 		<img
 			srcset={generateSrcSet(block.riverImage.formats)}
+			src={block.riverImage.src}
 			alt={block.riverImage.alternativeText}
 			class={cn('col-span-3', !block.imageLeft && 'order-2')}
 		/>

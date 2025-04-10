@@ -11,7 +11,7 @@
 	>;
 
 	let {
-		block
+		block,
 	}: {
 		block: ComponentContentBlocksText;
 	} = $props();
@@ -22,6 +22,7 @@
 		<h1 class="absolute z-10 text-4xl font-bold">{block.title}</h1>
 		<img
 			srcset={generateSrcSet(block.image.formats)}
+			src={block.riverImage.src}
 			alt={block.image.alternativeText}
 			class="h-full w-full object-cover"
 		/>
